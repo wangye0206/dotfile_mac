@@ -382,7 +382,7 @@
 (setq ac-use-menu-map t)
 ;; Default settings
 (define-key ac-menu-map "\C-n" 'ac-next)
-(define-key ac-menu-map (kbd "M-/") 'ac-next)
+;;(define-key ac-menu-map (kbd "M-/") 'ac-next)
 (define-key ac-menu-map "\C-p" 'ac-previous)
 ;; Disable enter completion
 (define-key ac-completing-map (kbd "RET") nil)
