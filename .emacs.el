@@ -179,6 +179,9 @@
 ;;Auto Show Matching Brace
 (require 'paren)
 (show-paren-mode 1)
+;; CUA mode
+(cua-mode t)
+(setq cua-enable-cua-keys nil)
 ;;Do not Add a New String to 'kill-ring' When It Is the Same as the Last One
 (setq kill-do-ot-save-duplicates t)
 ;; Don't open new frame when open file by dragging and emacsclient in
