@@ -35,7 +35,7 @@
   (add-to-list 'load-path (expand-file-name ModeDir))
   (let ((Modes
 		 '("cloudy" "gnuplot" "rainbow" "rainbow-delimiters"
-           "auto-complete" "magit")))
+           "auto-complete" "magit" "auctex")))
 	(dolist (Mode Modes)
 	  (add-to-list 'load-path (expand-file-name
                                (concat ModeDir "/" Mode))))
@@ -662,5 +662,9 @@
 ;;(if window-system
 ;;    (load-theme 'mysteryplanet t))
 
+
 (load-theme 'mysteryplanet t)
-      
+
+
+;; ============== add other file =======================>
+(load-file (expand-file-name "~/.emacs-tex.el"))
