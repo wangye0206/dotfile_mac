@@ -149,7 +149,7 @@ export PS1="$PR_STITLE%{${fg[cyan]}%}$SHLVL%{${fg_bold[cyan]}%}-> %{${fg_no_bold
 %{${fg_bold[yellow]}%}%n%{${fg_bold[white]}%}@%m%#%{${fg_no_bold[default]}%} "
 export RPS1="%{${fg_no_bold[red]}%}%(?..(%?%))%{${fg_no_bold[default]}%}"
 
-export PATH="${HOME}/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="${HOME}/bin:$PATH"
 #export PAGER="most"
 
 #HOMEBREW
