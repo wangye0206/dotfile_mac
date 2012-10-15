@@ -149,16 +149,19 @@ export PS1="$PR_STITLE%{${fg[cyan]}%}$SHLVL%{${fg_bold[cyan]}%}-> %{${fg_no_bold
 %{${fg_bold[yellow]}%}%n%{${fg_bold[white]}%}@%m%#%{${fg_no_bold[default]}%} "
 export RPS1="%{${fg_no_bold[red]}%}%(?..(%?%))%{${fg_no_bold[default]}%}"
 
-export PATH="${HOME}/bin:/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH="${HOME}/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 #export PAGER="most"
+
+#HOMEBREW
+export HOMEBREW_CC="clang"
 
 #alias for cloudy
 #alias cloudy='~/Documents/UK/Ferland/cloudy/trunk/source/cloudy.exe'
-alias nmcloudy='~/Documents/UK/Ferland/cloudy/newmole/source/cloudy.exe'
-alias modcloudy='~/Documents/UK/Ferland/cloudy/trunk/modifiedsource/cloudy.exe'
-alias modnmcloudy='~/Documents/UK/Ferland/cloudy/newmole/modifiedsource/cloudy.exe'
-alias c08='~/Documents/UK/Ferland/cloudy/c08.01/source/cloudy.exe'
-alias wycloudy='~/Documents/UK/Ferland/cloudy/WangYe/source/cloudy.exe'
+#alias nmcloudy='~/Documents/UK/Ferland/cloudy/newmole/source/cloudy.exe'
+#alias modcloudy='~/Documents/UK/Ferland/cloudy/trunk/modifiedsource/cloudy.exe'
+#alias modnmcloudy='~/Documents/UK/Ferland/cloudy/newmole/modifiedsource/cloudy.exe'
+#alias c08='~/Documents/UK/Ferland/cloudy/c08.01/source/cloudy.exe'
+#alias wycloudy='~/Documents/UK/Ferland/cloudy/WangYe/source/cloudy.exe'
 
 #alias for server
 alias cloud9='ssh wangye0206@cloud9.pa.uky.edu'
