@@ -157,7 +157,7 @@
 ;;Spell Checking
 (setq-default ispell-program-name
               (cond (linuxp "aspell")
-                    (macp "/opt/local/bin/aspell")))
+                    (macp "/usr/local/bin/aspell")))
 (add-hook 'text-mode-hook 'flyspell-mode)
 ;;Delete Duplicates in Minibuffer History
 (setq history-delete-duplicates t)
