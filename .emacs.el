@@ -35,7 +35,8 @@
   (add-to-list 'load-path (expand-file-name ModeDir))
   (let ((Modes
 		 '("cloudy" "gnuplot" "rainbow" "rainbow-delimiters"
-           "auto-complete" "magit" "auctex")))
+           "auto-complete" "magit" "auctex" "emacs-powerline"
+           "powerline")))
 	(dolist (Mode Modes)
 	  (add-to-list 'load-path (expand-file-name
                                (concat ModeDir "/" Mode))))
@@ -44,6 +45,21 @@
 
 (add-to-list 'custom-theme-load-path
              (expand-file-name "~/.emacs.d/themes/"))
+
+;;=============== Theme ===============================>
+(if macp
+    (progn
+      (add-to-list 'default-frame-alist '(height . 45))
+      (add-to-list 'default-frame-alist '(width . 80))
+      (setq initial-frame-alist '((top . 10) (left . 650)))
+  )
+  )
+;;(if window-system
+;;    (load-theme 'mysteryplanet t))
+
+
+(load-theme 'mysteryplanet t)
+
 
 ;; =============== Coding and Language ===============>
 ;; (set-selection-coding-system 'utf-8)
@@ -162,6 +178,9 @@
 ;;Delete Duplicates in Minibuffer History
 (setq history-delete-duplicates t)
 
+;; Powerline
+(require 'cl)
+(require 'powerline)
 ;; Version control Settings
 (require 'vc-git)
 (when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
@@ -649,22 +668,6 @@
 (global-set-key (kbd "C-x C-a") 'anything)
 (global-set-key (kbd "%") 'match-paren)
 (global-set-key (kbd "M-RET") 'toggle-line-wrap)
-
-
-;;=============== Theme ===============================>
-(if macp
-    (progn
-      (add-to-list 'default-frame-alist '(height . 40))
-      (add-to-list 'default-frame-alist '(width . 80))
-      (setq initial-frame-alist '((top . 10) (left . 650)))
-  )
-  )
-;;(if window-system
-;;    (load-theme 'mysteryplanet t))
-
-
-(load-theme 'mysteryplanet t)
-
 
 ;; ============== add other file =======================>
 (load-file (expand-file-name "~/.emacs-tex.el"))

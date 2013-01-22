@@ -130,7 +130,7 @@ Reader="okular"
 alias sudo='A=`alias` sudo  '
 alias fat="mount -o 'user,utf8,umask=000,quiet'"
 okular () {/usr/bin/okular $* 2> /dev/null}
-alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+#alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 
 alias -s pdf=$Reader
 alias -s eps=$Reader
