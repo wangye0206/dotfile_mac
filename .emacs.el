@@ -29,6 +29,9 @@
        (one-buffer-one-frame-mode -1)
 )))
 
+;; Which computer I am using?
+(defconst cirrus (string-equal system-name "cirrus.pa.uky.edu") "Am I using cirrus?")
+
 
 ;;========== Add Load Path ============>
 (let ((ModeDir "~/.emacs.d"))
@@ -48,11 +51,18 @@
 
 ;;=============== Theme ===============================>
 (if macp
-    (progn
-      (add-to-list 'default-frame-alist '(height . 45))
-      (add-to-list 'default-frame-alist '(width . 80))
-      (setq initial-frame-alist '((top . 10) (left . 650)))
-  )
+    (if cirrus
+        (progn
+          (add-to-list 'default-frame-alist '(height . 75))
+          (add-to-list 'default-frame-alist '(width . 120))
+          (setq initial-frame-alist '((top . 370) (left . 1650)))
+          )
+      (progn
+        (add-to-list 'default-frame-alist '(height . 45))
+        (add-to-list 'default-frame-alist '(width . 80))
+        (setq initial-frame-alist '((top . 10) (left . 650)))
+        )
+      )
   )
 ;;(if window-system
 ;;    (load-theme 'mysteryplanet t))
