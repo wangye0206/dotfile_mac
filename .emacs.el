@@ -30,8 +30,8 @@
 )))
 
 ;; Which computer I am using?
-(defconst cirrus (string-equal system-name "cirrus.pa.uky.edu") "Am I using cirrus?")
-
+(defconst cirrus (string-equal system-name "cirrus.pa.uky.edu")
+  "Am I using cirrus?")
 
 ;;========== Add Load Path ============>
 (let ((ModeDir "~/.emacs.d"))
@@ -318,8 +318,7 @@
      (cons '("\\.css\\'" . css-mode) auto-mode-alist))
 
 ;;Gnuplot Mode
-(autoload 'gnuplot-mode "gnuplot" "gnuplot major mode" t)
-(autoload 'Gnuplot-make-buffer "gnuplot" "open a buffer in gnuplot mode" t)
+(require 'gnuplot-mode)
 (setq auto-mode-alist (append '(("\\.plot$" . gnuplot-mode)) auto-mode-alist))
 
 

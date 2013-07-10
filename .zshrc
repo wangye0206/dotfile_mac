@@ -53,8 +53,6 @@ alias lssmall='ls -lSh *(.) | head' # List smallest
 
 export LSCOLORS='Cxfxcxdxbxegedabagacad'
 
-# export LS_COLORS='*.swp=-1;44;37:*,v=5;34;93:*.vim=35:no=0:fi=0:di=32:ln=36:or=1;40:mi=1;40:pi=31:so=33:bd=44;37:cd=44;37:*.jpg=1;32:*.jpeg=1;32:*.JPG=1;32:*.gif=1;32:*.png=1;32:*.jpeg=1;32:*.ppm=1;32:*.pgm=1;32:*.pbm=1;32:*.c=1;32:*.C=1;33:*.h=1;33:*.cc=1;33:*.awk=1;33:*.pl=1;33:*.gz=0;33:*.tar=0;33:*.zip=0;33:*.lha=0;33:*.lzh=0;33:*.arj=0;33:*.bz2=0;33:*.tgz=0;33:*.taz=33:*.html=36:*.htm=1;34:*.doc=1;34:*.txt=1;34:*.o=1;36:*.a=1;36'
-
 # screen cooperation
 setopt extended_glob
 preexec () {
@@ -130,7 +128,6 @@ Reader="okular"
 alias sudo='A=`alias` sudo  '
 alias fat="mount -o 'user,utf8,umask=000,quiet'"
 okular () {/usr/bin/okular $* 2> /dev/null}
-#alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 
 alias -s pdf=$Reader
 alias -s eps=$Reader
@@ -155,16 +152,10 @@ export PATH="${HOME}/bin:$PATH"
 #HOMEBREW
 export HOMEBREW_CC="clang"
 
-#alias for cloudy
-#alias cloudy='~/Documents/UK/Ferland/cloudy/trunk/source/cloudy.exe'
-#alias nmcloudy='~/Documents/UK/Ferland/cloudy/newmole/source/cloudy.exe'
-#alias modcloudy='~/Documents/UK/Ferland/cloudy/trunk/modifiedsource/cloudy.exe'
-#alias modnmcloudy='~/Documents/UK/Ferland/cloudy/newmole/modifiedsource/cloudy.exe'
-#alias c08='~/Documents/UK/Ferland/cloudy/c08.01/source/cloudy.exe'
-#alias wycloudy='~/Documents/UK/Ferland/cloudy/WangYe/source/cloudy.exe'
-
 #alias for server
 alias cloud9='ssh wangye0206@cloud9.pa.uky.edu'
 alias radegund='ssh wangye0206@radegund.pa.uky.edu'
 alias wolkje='ssh wangye0206@wolkje.pa.uky.edu'
 alias ukyhpc='ssh ywa224@dlx.uky.edu'
+alias cirrus='ssh lancelot@cirrus.pa.uky.edu'
+alias nephos='ssh wangye0206@nephos.pa.uky.edu'
