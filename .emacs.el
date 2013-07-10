@@ -55,7 +55,7 @@
         (progn
           (add-to-list 'default-frame-alist '(height . 75))
           (add-to-list 'default-frame-alist '(width . 120))
-          (setq initial-frame-alist '((top . 370) (left . 1650)))
+          (setq initial-frame-alist '((top . 300) (left . 1650)))
           )
       (progn
         (add-to-list 'default-frame-alist '(height . 45))
