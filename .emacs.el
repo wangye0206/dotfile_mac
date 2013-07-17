@@ -39,7 +39,7 @@
   (let ((Modes
 		 '("cloudy" "gnuplot" "rainbow" "rainbow-delimiters"
            "auto-complete" "magit" "auctex" "emacs-powerline"
-           "powerline")))
+           "powerline" "cuda") ))
 	(dolist (Mode Modes)
 	  (add-to-list 'load-path (expand-file-name
                                (concat ModeDir "/" Mode))))
@@ -270,6 +270,10 @@
 (setq compile-command "make -w")
 
 ;;=========== Other Programming Settings =======================>
+;; Cuda
+(require 'cuda-mode)
+(add-to-list 'auto-mode-alist '("\\.cu\\'" . cuda-mode))
+
 ;; Subword
 (add-hook 'c-mode-common-hook
           (lambda () (subword-mode 1)))

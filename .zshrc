@@ -147,6 +147,10 @@ export PS1="$PR_STITLE%{${fg[cyan]}%}$SHLVL%{${fg_bold[cyan]}%}-> %{${fg_no_bold
 export RPS1="%{${fg_no_bold[red]}%}%(?..(%?%))%{${fg_no_bold[default]}%}"
 
 export PATH="${HOME}/bin:$PATH"
+if [ $HOST = cirrus.pa.uky.edu ]; then
+    export PATH="/Developer/NVIDIA/CUDA-5.5/bin:$PATH"
+    export DYLD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-5.5/lib:$DYLD_LIBRARY_PATH"
+fi
 #export PAGER="most"
 
 #HOMEBREW
