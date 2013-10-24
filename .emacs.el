@@ -269,6 +269,9 @@
 ;; Make make command print directory information
 (setq compile-command "make -w")
 
+;; Use C++ mode in .h file
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
 ;;=========== Other Programming Settings =======================>
 ;; Cuda
 (require 'cuda-mode)
