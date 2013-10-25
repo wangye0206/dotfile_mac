@@ -141,6 +141,11 @@ alias -s com=$Browser
 alias -s net=$Browser
 alias -s org=$Browser
 
+# zsh online help from homebrew
+unalias run-help
+autoload run-help
+HELPDIR=/usr/local/share/zsh/helpfiles
+
 #export variables
 export PS1="$PR_STITLE%{${fg[cyan]}%}$SHLVL%{${fg_bold[cyan]}%}-> %{${fg_no_bold[cyan]}%}%60<...<%~%<<
 %{${fg_bold[yellow]}%}%n%{${fg_bold[white]}%}@%m%#%{${fg_no_bold[default]}%} "

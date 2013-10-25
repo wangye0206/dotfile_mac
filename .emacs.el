@@ -32,18 +32,22 @@
 ;; Which computer I am using?
 (defconst cirrus (string-equal system-name "cirrus.pa.uky.edu")
   "Am I using cirrus?")
+(defconst lightning (string-equal system-name "Lightning.local")
+  "Am I using lightning")
+(defconst storm (string-equal system-name "Storm.local")
+  "Am I using storm")
 
 ;;========== Add Load Path ============>
 (let ((ModeDir "~/.emacs.d"))
   (add-to-list 'load-path (expand-file-name ModeDir))
   (let ((Modes
-		 '("cloudy" "gnuplot" "rainbow" "rainbow-delimiters"
+         '("cloudy" "gnuplot" "rainbow" "rainbow-delimiters"
            "auto-complete" "magit" "auctex" "emacs-powerline"
            "powerline" "cuda") ))
-	(dolist (Mode Modes)
-	  (add-to-list 'load-path (expand-file-name
+        (dolist (Mode Modes)
+          (add-to-list 'load-path (expand-file-name
                                (concat ModeDir "/" Mode))))
-	)
+        )
   )
 
 (add-to-list 'custom-theme-load-path
@@ -51,19 +55,19 @@
 
 ;;=============== Theme ===============================>
 (if macp
-    (if cirrus
-        (progn
-          (add-to-list 'default-frame-alist '(height . 75))
-          (add-to-list 'default-frame-alist '(width . 120))
-          (setq initial-frame-alist '((top . 300) (left . 1650)))
-          )
-      (progn
-        (add-to-list 'default-frame-alist '(height . 45))
-        (add-to-list 'default-frame-alist '(width . 80))
-        (setq initial-frame-alist '((top . 10) (left . 650)))
-        )
-      )
-  )
+    (cond (lightning (progn
+                       (add-to-list 'default-frame-alist '(height . 50))
+                       (add-to-list 'default-frame-alist '(width . 80))
+                       (setq initial-frame-alist '((top . 30) (left . 750)))))
+          (cirrus (progn
+                    (add-to-list 'default-frame-alist '(height . 75))
+                    (add-to-list 'default-frame-alist '(width . 120))
+                    (setq initial-frame-alist '((top . 300) (left . 1650)))))
+          (storm (progn
+               (add-to-list 'default-frame-alist '(height . 45))
+               (add-to-list 'default-frame-alist '(width . 80))
+               (setq initial-frame-alist '((top . 10) (left . 650)))))))
+
 ;;(if window-system
 ;;    (load-theme 'mysteryplanet t))
 
@@ -83,19 +87,20 @@
 ;; Fix the width of Chinese marks.
 (if linuxp
     (let ((l '(chinese-gb2312
-	       gb18030-2-byte
-	       gb18030-4-byte-bmp
-	       gb18030-4-byte-ext-1
-	       gb18030-4-byte-ext-2
-	       gb18030-4-byte-smp)))
+               gb18030-2-byte
+               gb18030-4-byte-bmp
+               gb18030-4-byte-ext-1
+               gb18030-4-byte-ext-2
+               gb18030-4-byte-smp)))
       (dolist (elt l)
-	(map-charset-chars #'modify-category-entry elt ?|)
-	(map-charset-chars
-	 (lambda (range ignore)
-	   (set-char-table-range char-width-table range 2))
-	 elt))))
+        (map-charset-chars #'modify-category-entry elt ?|)
+        (map-charset-chars
+         (lambda (range ignore)
+           (set-char-table-range char-width-table range 2))
+         elt))))
 
 ;;========== Basic Settings ============>
+
 (setenv "COLUMNS" "80")
 (setq user-full-name "Lancelot")
 (setq user-mail-address "wangye0206@gmail.com")
@@ -121,6 +126,7 @@
 
 (add-hook 'text-mode-hook
           (lambda () (auto-fill-mode t)))
+
 
 ;; time stamp
 (add-hook 'write-file-hooks 'time-stamp)
