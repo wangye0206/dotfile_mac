@@ -40,10 +40,15 @@
 ;;========== Add Load Path ============>
 (let ((ModeDir "~/.emacs.d"))
   (add-to-list 'load-path (expand-file-name ModeDir))
-  (let ((Modes
-         '("cloudy" "gnuplot" "rainbow" "rainbow-delimiters"
-           "auto-complete" "magit" "auctex" "emacs-powerline"
-           "powerline" "cuda") ))
+  (let (if macp (Modes
+                 '("cloudy" "gnuplot" "rainbow" "rainbow-delimiters"
+                   "auto-complete" "magit" "auctex" "emacs-powerline"
+                   "powerline" "cuda") )
+         (Modes
+          '("cloudy" "gnuplot" "rainbow" "rainbow-delimiters"
+            "auto-complete" "magit" "emacs-powerline"
+            "powerline" "cuda")
+          ))
         (dolist (Mode Modes)
           (add-to-list 'load-path (expand-file-name
                                (concat ModeDir "/" Mode))))
@@ -692,4 +697,4 @@
 (global-set-key (kbd "M-RET") 'toggle-line-wrap)
 
 ;; ============== add other file =======================>
-(load-file (expand-file-name "~/.emacs-tex.el"))
+(if macp (load-file (expand-file-name "~/.emacs-tex.el")))
